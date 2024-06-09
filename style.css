@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background-image: #F9E9D2;
 }
 
 .hero {
@@ -14,6 +13,7 @@
     padding: 10px 10%;
     overflow: hidden;
     position: relative;
+    background: radial-gradient(#FFEDEE 0%, #D5345C 100%);
 }
 
 nav {
@@ -21,10 +21,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .logo {
     width: 140px;
+}
+
+nav ul{
+    display: flex; 
+    align-items: center;
 }
 
 nav ul li {
@@ -40,7 +46,7 @@ nav ul li a {
     padding: 10px 20px;
     background-color: #FFEDEE;
     border-radius: 20px;
-}
+    filter: drop-shadow(0px 0px 16px #FFEDEE);}
 
 nav ul li a:hover {
     background-color: #D5345C;
@@ -67,7 +73,7 @@ nav ul li a:hover {
 
 .content h1 {
     font-size: 70px;
-    color: #D5345C; 
+    color: #ffffff; 
     -webkit-background-clip: text; 
     background-clip: text; 
 }
@@ -81,6 +87,7 @@ nav ul li a:hover {
 .content .button {
     padding: 15px 80px;
     font-size: 15px;
+    animation-delay: 1s;
 }
 
 .button:hover {
@@ -95,7 +102,7 @@ nav ul li a:hover {
 }
 
 .feature-img.animation {
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 .animation {
@@ -109,6 +116,21 @@ nav ul li a:hover {
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+.left-side-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: hidden;
+}
+
+.left-side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
 /* Media Queries */
@@ -127,13 +149,13 @@ nav ul li a:hover {
         flex-direction: column;
     }
     .logo {
-        width: 100px;
+        width: 126px;
     }
     nav ul {
         padding: 10px 0;
     }
     .content h1 {
-        font-size: 50px;
+        font-size: 30px;
     }
     .content p {
         font-size: 16px;
@@ -143,13 +165,14 @@ nav ul li a:hover {
     }
     .feature-img {
         width: 300px;
+        padding: 20px;
         right: 0;
-        position: relative;
+        position: right;
         margin: 20px auto 0;
     }
     .hero {
         padding: 20px;
-        flex-direction: column; /* Ajuste para empilhamento em dispositivos móveis */
+        flex-direction: column; 
     }
 }
 
