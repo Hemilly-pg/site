@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .hero {
@@ -41,16 +41,40 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #D5345C;
+    color: #fff;
     font-weight: 400;
     padding: 10px 20px;
-    background-color: #FFEDEE;
     border-radius: 20px;
-    filter: drop-shadow(0px 0px 16px #FFEDEE);}
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
 
 nav ul li a:hover {
     background-color: #D5345C;
     color: rgb(255, 255, 255); 
+}
+
+.home-link {
+    position: relative;
+}
+
+.home-link::after {
+    content: '▼';
+    font-size: 15px;
+    color: #E36A89;
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0px 0px 12px #000000);
+
+}
+
+.home-link:hover::after {
+    color: #D5345C;
 }
 
 .button {
@@ -80,8 +104,10 @@ nav ul li a:hover {
 
 .content p {
     margin: 10px 0 30px;
-    color: #090606;
+    font-size: 20px;
+    color: #ffffff;
     animation-delay: 0.5s;
+    filter: drop-shadow(0px 0px 12px #ffffff);
 }
 
 .content .button {
@@ -106,6 +132,7 @@ nav ul li a:hover {
 }
 
 .animation {
+    
     opacity: 0;
     transform: translateY(40px);
     animation: moveup 0.4s linear forwards;
@@ -149,8 +176,6 @@ nav ul li a:hover {
     object-fit: cover; 
 }
 
-
-/* Media Queries */
 @media (max-width: 1024px) {
     .content h1 {
         font-size: 60px;
@@ -169,7 +194,7 @@ nav ul li a:hover {
         width: 126px;
     }
     nav ul {
-        padding: 10px 0;
+        padding: 30px 0;
     }
     .content h1 {
         font-size: 30px;
@@ -181,11 +206,12 @@ nav ul li a:hover {
         padding: 15px 60px;
     }
     .feature-img {
-        width: 300px;
-        padding: 20px;
+        width: 250px;
+        padding: 10px;
         right: 0;
         position: right;
         margin: 20px auto 0;
+        margin-bottom: 20px;
     }
     .hero {
         padding: 20px;
@@ -193,7 +219,7 @@ nav ul li a:hover {
     }
     .right-side-image {
         width: 740px;
-        margin-top: 100px;
+        margin-top: 130px;
     }
 }
 

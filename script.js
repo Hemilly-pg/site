@@ -7,3 +7,13 @@ function changeImage() {
 }
 
 setInterval(changeImage, 2000);
+
+document.getElementById('login-button').addEventListener('click', playCatSound);
+document.getElementById('explore-button').addEventListener('click', playCatSound);
+
+function playCatSound(event) {
+    event.preventDefault(); // Para evitar comportamento padrão do link
+    const catSound = document.getElementById('cat-sound');
+    catSound.currentTime = 0; // Recomeça o som se já estiver tocando
+    catSound.play();
+}
